@@ -1,13 +1,23 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <input  v-model="people.name"/>
+  <input  v-model="people.age"/>
+  <SetPeople />
+  <SetPeopleOptimize  :people="people"/>
 </template>
 
 <script setup>
+  import {reactive} from 'vue'
 import HelloWorld from './components/HelloWorld.vue'
+import SetPeople from './components/SetPeople.vue'
+import SetPeopleOptimize from './components/SetPeopleOptimize.vue'
 
 // This starter template is using Vue 3 experimental <script setup> SFCs
 // Check out https://github.com/vuejs/rfcs/blob/script-setup-2/active-rfcs/0000-script-setup.md
+let people = {
+    name:'abc',
+    age:18
+}
 </script>
 
 <style>
